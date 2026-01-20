@@ -71,6 +71,7 @@ button.btn-success:hover {
     line-height: 1.6;
     box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
 }
+
 /* Анимация появления результата */
 #result:not(.d-none) {
     animation: fadeIn 0.5s ease;
@@ -81,6 +82,7 @@ button.btn-success:hover {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -88,21 +90,34 @@ button.btn-success:hover {
 }
 
 
-
-
-footer {
-
-    display: flex;
-    flex-direction: column;
-     margin-top: 500px;
-    background:rgb(41, 40, 40);
-    text-align: center;
-    padding: 40px;
-    border-radius: 20px;
-    color:#0088cc;
+main {
+    flex: 1;
 }
 
-     
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    margin-top: clamp(60px, 10vh, 200px);
+
+    background: rgb(41, 40, 40);
+    text-align: center;
+    padding: 40px 20px;
+    color: #0088cc;
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 15px;
+
+        flex-direction: column;
+    }
+
+
 
     .socicon {
         width: 70px;
@@ -111,17 +126,12 @@ footer {
         display: inline-block;
         margin: 0 15px;
         cursor: pointer;
-        transition: background-color 0.5s ;
-    
+        transition: background-color 0.5s;
+
     }
-    
-    
+
+
     .socicon.tg:hover {
         background-color: #0088cc;
     }
-
-
-
-
-
-
+}
